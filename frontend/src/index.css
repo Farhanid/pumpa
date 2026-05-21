@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Custom dark mode configuration */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Smooth transition for theme switching */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Optional: Customize dark mode colors */
+:root {
+  --background: 255 255 255;
+  --foreground: 0 0 0;
+}
+
+.dark {
+  --background: 17 24 39;
+  --foreground: 255 255 255;
+}
+
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* For Chrome, Safari, and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Add to your global CSS file */
+.dark-mode-toggle {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-mode-toggle * {
+    transition: all 0.3s ease;
+}
