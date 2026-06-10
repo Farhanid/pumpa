@@ -1205,7 +1205,7 @@ const Programs = () => {
 
     return (
         <>
-            <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-gray-50 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 transition-colors duration-500">
+            <section  className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-gray-50 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 transition-colors duration-500">
                 {/* Background Effects */}
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="absolute left-0 top-0 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-emerald-500/10 blur-3xl" />

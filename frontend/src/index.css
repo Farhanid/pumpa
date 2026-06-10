@@ -38,3 +38,7 @@
 .dark-mode-toggle * {
     transition: all 0.3s ease;
 }
+
+body {
+  font-family: 'Inter', sans-serif;
+}

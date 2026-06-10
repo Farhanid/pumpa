@@ -19,6 +19,8 @@ import {
 } from 'react-icons/fa';
 import BackToTop from '../../components/Reusable/BackToTop';
 import ContactForm from '../../components/Reusable/ContactForm';
+import SocialMediaLinks from '../../components/Reusable/SocialMediaLinks';
+import GoogleMapEmbed from '../../components/Reusable/GoogleMapEmbed';
 
 const Contact = () => {
     const [copiedPhone, setCopiedPhone] = useState(false);
@@ -46,7 +48,7 @@ const Contact = () => {
     return (
         <div className="pt-16 overflow-hidden">
             {/* Hero Section */}
-            <section className="bg-gradient-to-br from-green-900 via-emerald-800 to-teal-900 text-white py-20 md:py-24">
+            <section  className="bg-gradient-to-br from-green-900 via-emerald-800 to-teal-900 text-white py-20 md:py-24">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto text-center">
                         <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -260,34 +262,10 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            {/* Google Maps Embed */}
-                            <div className="h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
-                                <a
-                                    href="https://maps.app.goo.gl/2j3WqoMnhtxbB4Ax8"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block w-full h-full relative group"
-                                >
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.964048532276!2d101.579647!3d3.073667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4f1e3b4a3b4b%3A0x0!2zPHAgY2xhc3M9IlVJU2Nyb2xsIj7CtDwvcD4!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy"
-                                        width="100%"
-                                        height="100%"
-                                        style={{ border: 0 }}
-                                        allowFullScreen=""
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        title="Pumpa Squash Academy Subang Branch Location"
-                                    ></iframe>
-                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                                        <div className="bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100">
-                                            <p className="text-green-600 dark:text-green-400 font-semibold flex items-center gap-2">
-                                                <FaMapMarkerAlt />
-                                                Click to open full map
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                             <GoogleMapEmbed />
+
+
+
                         </motion.div>
                     </div>
                 </div>
@@ -295,50 +273,7 @@ const Contact = () => {
 
            
 
-            {/* Social Media Section */}
-            <section className="py-16 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-900">
-                <div className="container mx-auto px-4">
-                    <motion.div {...fadeInUp} className="text-center max-w-3xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                            Connect With Us
-                        </h2>
-                        <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                            Follow us on social media for updates, tips, and success stories
-                        </p>
-                        <div className="flex justify-center gap-6">
-                            <a
-                                href="https://www.instagram.com/pumpasquashacademy"
-                                className="w-14 h-14 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-r hover:from-green-600 hover:to-emerald-600 group"
-                            >
-                                <FaInstagram className="text-2xl text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors" />
-                            </a>
-                            <a
-                                href="https://www.facebook.com/pumpasquashacademy"
-                                className="w-14 h-14 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-r hover:from-green-600 hover:to-emerald-600 group"
-                            >
-                                <FaFacebook className="text-2xl text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors" />
-                            </a>
-                            
-
-                            <a
-                                href="https://wa.me/601111989375"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-14 h-14 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-r hover:from-green-600 hover:to-emerald-600 group"
-                            >
-                                <FaWhatsapp className="text-2xl text-green-600 group-hover:text-white transition-colors" />
-                            </a>
-                            <a
-                                href="https://wa.me/601111989375"
-                                className="w-14 h-14 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-r hover:from-green-600 hover:to-emerald-600 group"
-                            >
-                                <FaTwitter className="text-2xl text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors" />
-                            </a>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-
+            <SocialMediaLinks />
            
 
             {/* Back to Top Button */}

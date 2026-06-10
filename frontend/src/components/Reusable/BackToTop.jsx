@@ -42,6 +42,12 @@ const BackToTop = ({ threshold = 300, position = "bottom-8 right-8" }) => {
                     <FaArrowUp className="w-5 h-5 group-hover:animate-bounce" />
                 </motion.button>
             )}
+
+
+           
+
+
+
         </AnimatePresence>
     );
 };

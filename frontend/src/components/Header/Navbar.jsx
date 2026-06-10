@@ -485,9 +485,10 @@
 
 
 // src/components/Header/Navbar.jsx
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import DarkModeToggle from '../Reusable/DarkModeToggle';
+import logo from '../../assets/logo.png'
 
 
 const Navbar = () => {
@@ -506,16 +507,35 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
                     {/* Logo Section */}
-                    <div className="flex items-center">
+                    {/* <div className="flex items-center">
                         <NavLink to="/" className="flex-shrink-0 flex items-center group">
                             <div className="relative">
                                 <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 tracking-tight">
                                     Pumpa
                                 </span>
                                 <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></div>
+                                <img src={logo} alt="" />
+                            </div>
+                        </NavLink>
+                    </div> */}
+
+                    
+                    <div className="flex items-center">
+                        <NavLink to="/" className="flex-shrink-0 flex items-center group">
+                            <div className="relative">
+                                {/* Fixed logo img tag */}
+                                <img
+                                    src={logo}
+                                    alt="Logo"
+                                    className="h-8 w-auto" // Adjust height as needed
+                                />
+                                {/* Optional: Add hover effect underline */}
+                                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></div>
                             </div>
                         </NavLink>
                     </div>
+
+
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-1">
@@ -697,3 +717,176 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+
+// // src/components/Header/Navbar.jsx
+// import React, { useState } from 'react';
+// import { NavLink, useNavigate } from 'react-router-dom';
+// import DarkModeToggle from '../Reusable/DarkModeToggle';
+
+// const Navbar = () => {
+//     const [isOpen, setIsOpen] = useState(false);
+//     const navigate = useNavigate();
+
+//     const toggleMenu = () => {
+//         setIsOpen(!isOpen);
+//     };
+
+//     const handleLinkClick = () => {
+//         setIsOpen(false);
+//     };
+
+//     const handleNavigation = (path, sectionId = null) => {
+//         setIsOpen(false);
+
+//         if (sectionId) {
+//             // If we're already on the target page
+//             if (window.location.pathname === path) {
+//                 const element = document.getElementById(sectionId);
+//                 if (element) {
+//                     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+//                 }
+//             } else {
+//                 // Navigate to the page with hash
+//                 navigate(`${path}#${sectionId}`);
+//             }
+//         } else {
+//             navigate(path);
+//             window.scrollTo({ top: 0, behavior: 'smooth' });
+//         }
+//     };
+
+//     return (
+//         <nav className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-50 transition-all duration-300 border-b border-gray-200/50 dark:border-gray-700/50">
+//             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//                 <div className="flex justify-between h-16">
+//                     {/* Logo Section */}
+//                     <div className="flex items-center">
+//                         <button
+//                             onClick={() => handleNavigation('/')}
+//                             className="flex-shrink-0 flex items-center group cursor-pointer"
+//                         >
+//                             <div className="relative">
+//                                 <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 tracking-tight">
+//                                     Pumpa
+//                                 </span>
+//                                 <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></div>
+//                             </div>
+//                         </button>
+//                     </div>
+
+//                     {/* Desktop Menu */}
+//                     <div className="hidden md:flex items-center space-x-1">
+//                         <button
+//                             onClick={() => handleNavigation('/')}
+//                             className="relative px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+//                         >
+//                             Home
+//                         </button>
+
+//                         <button
+//                             onClick={() => handleNavigation('/about', 'about-section')}
+//                             className="relative px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+//                         >
+//                             About
+//                         </button>
+
+//                         <button
+//                             onClick={() => handleNavigation('/programs', 'programs-section')}
+//                             className="relative px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+//                         >
+//                             Programs
+//                         </button>
+
+//                         <button
+//                             onClick={() => handleNavigation('/contact', 'contact-section')}
+//                             className="relative px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+//                         >
+//                             Contact
+//                         </button>
+
+//                         {/* Dark Mode Toggle Component */}
+//                         <DarkModeToggle />
+//                     </div>
+
+//                     {/* Mobile menu button */}
+//                     <div className="flex items-center md:hidden">
+//                         <DarkModeToggle />
+
+//                         <button
+//                             onClick={toggleMenu}
+//                             type="button"
+//                             className="inline-flex items-center justify-center p-2 rounded-xl text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 ml-2"
+//                             aria-controls="mobile-menu"
+//                             aria-expanded={isOpen}
+//                         >
+//                             <span className="sr-only">Open main menu</span>
+//                             {!isOpen ? (
+//                                 <svg className="block h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+//                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+//                                 </svg>
+//                             ) : (
+//                                 <svg className="block h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+//                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+//                                 </svg>
+//                             )}
+//                         </button>
+//                     </div>
+//                 </div>
+//             </div>
+
+//             {/* Mobile Menu */}
+//             <div
+//                 className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 invisible'
+//                     }`}
+//                 id="mobile-menu"
+//             >
+//                 <div className="px-4 pt-2 pb-4 space-y-1 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200/50 dark:border-gray-700/50 shadow-lg">
+//                     <button
+//                         onClick={() => handleNavigation('/')}
+//                         className="block w-full text-left px-4 py-3 rounded-xl text-base font-medium tracking-wide transition-all duration-200 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+//                     >
+//                         Home
+//                     </button>
+
+//                     <button
+//                         onClick={() => handleNavigation('/about', 'about-section')}
+//                         className="block w-full text-left px-4 py-3 rounded-xl text-base font-medium tracking-wide transition-all duration-200 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+//                     >
+//                         About
+//                     </button>
+
+//                     <button
+//                         onClick={() => handleNavigation('/programs', 'programs-section')}
+//                         className="block w-full text-left px-4 py-3 rounded-xl text-base font-medium tracking-wide transition-all duration-200 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+//                     >
+//                         Programs
+//                     </button>
+
+//                     <button
+//                         onClick={() => handleNavigation('/contact', 'contact-section')}
+//                         className="block w-full text-left px-4 py-3 rounded-xl text-base font-medium tracking-wide transition-all duration-200 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+//                     >
+//                         Contact
+//                     </button>
+
+//                     {/* Mobile CTA Button */}
+//                     <div className="pt-3">
+//                         <button
+//                             onClick={() => handleNavigation('/contact', 'contact-section')}
+//                             className="block w-full text-center px-4 py-3 text-base font-semibold tracking-wide text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:shadow-lg transition-all duration-300"
+//                         >
+//                             Get Started
+//                         </button>
+//                     </div>
+//                 </div>
+//             </div>
+//         </nav>
+//     );
+// };
+
+// export default Navbar;
