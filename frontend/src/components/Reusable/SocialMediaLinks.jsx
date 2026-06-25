@@ -46,15 +46,12 @@ const SocialMediaLinks = () => {
                           >
                               <FaWhatsapp className="text-2xl text-green-600 group-hover:text-white transition-colors" />
                           </a>
-                          <a
-                              href="https://wa.me/601111989375"
-                              className="w-14 h-14 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-r hover:from-green-600 hover:to-emerald-600 group"
-                          >
-                              <FaTwitter className="text-2xl text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors" />
-                          </a>
+                          
                       </div>
                   </motion.div>
               </div>
+
+
           </section>
 
 

@@ -34,7 +34,7 @@ const BackToTop = ({ threshold = 300, position = "bottom-8 right-8" }) => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.5 }}
                     onClick={scrollToTop}
-                    className={`fixed ${position} z-50 p-4 bg-linear-to-r from-green-600 to-emerald-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group`}
+                    className={`fixed ${position} z-50 p-4 bg-linear-to-r from-green-600 to-emerald-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group`}
                     aria-label="Back to top"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
